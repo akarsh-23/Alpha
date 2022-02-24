@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -7,12 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private router:Router) { }
+  image!:string;
+  
   ngOnInit(): void {
+    this.image = '/assets/img/login.jpg'
   }
-
-  signup(): void{
-
+  isMatch(body:any):any{
+    if(body.password==body.confirmPassword) return true;
+    else false;
+  }
+  body = {}
+  signup(body:any): void{
+    this.body = body;
+    if(body.password==body.confirmPassword) console.log(true);
+    console.log(this.body);
+    this.router.navigate(['/login']);
   }
 }

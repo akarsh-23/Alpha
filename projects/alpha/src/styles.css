@@ -1,18 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
 @import '../../../node_modules/bootstrap-icons/font/bootstrap-icons.css'; 
-html, body { height: 100%; }
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
 body { 
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: 'Quicksand', sans-serif;
     text-align: center;
-    background-color:indigo;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+p{
+    font-family: 'Quicksand', sans-serif;
 }
 .btn-primary{
     background-color: indigo;
 }
 .btn-primary:hover{
     background-color: indigo;
+}
+.btn-primary:disabled{
+    background-color: rgba(76, 0, 130, 0.616);
 }
 .link-primary{
     text-decoration: none;
@@ -22,4 +30,13 @@ body {
     text-decoration: none;
     color: indigo;
     cursor: pointer;
+}
+.text-primary1{
+    color: indigo;
+}
+.nav-tabs:hover{
+    background-color: indigo;
+}
+.nav-tabs:hover .link-primary{
+    color:whitesmoke;
 }

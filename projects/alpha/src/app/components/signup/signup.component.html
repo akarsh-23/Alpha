@@ -1,75 +1,95 @@
-<div class="container-fluid w-100 p-5">
-    <div class="bg-white rounded-2">
-        <div class="d-flex justify-content-center">
-            <div class="display-6 mt-3">Sign Up<span class="bi bi-door-open"></span></div>
+<div class="m-0 p-0 bg-white">
+    <div class="row align-items-center p-0 m-0">
+        <div class="col-sm">
+            <img class="w-50" [src]="image" />
         </div>
-        <div>
+        <div class="col-sm">
             <div class="d-flex justify-content-center">
-                <form class="ps-3 pe-3" (submit)="signup()" enctype="text/plain">
-                    <div class="row">
-                        <div class="col-sm input-group mt-3">
-                            <input type="text" name="firstName" #firstName="ngModel" ngModel class="form-control" placeholder="First Name"
-                                minlength="2" required />
-                        </div>
-                        <div *ngIf="firstName.invalid && (firstName.touched || firstName.dirty)" class="text-warning">
-                            <p>Enter a valid first name</p>
-                        </div>
-                        <div class="col-sm input-group mt-3">
-                            <input type="text" name="lastName" #lastName="ngModel" ngModel class="form-control" placeholder="Last Name" minlength="3" required />
-                        </div>
-                        <div *ngIf="lastName.invalid && (lastName.touched || lastName.dirty)" class="text-warning">
-                            <p>Enter a valid last name</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm input-group mt-3">
-                            <span class="input-group-text text-dark bi bi-envelope"></span>
-                            <input type="email" name="email" #email="ngModel" ngModel class="form-control" placeholder="example@email.com" email required />
-                        </div>
-                        <div *ngIf="email.invalid && (email.touched || email.dirty)" class="text-warning">
-                            <p>Enter a valid email</p>
-                        </div>
-                        <div class="col-sm input-group mt-3">
-                            <select class="form-select" name="gender" #gender="ngModel" ngModel required>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                        <div *ngIf="gender.invalid && (gender.touched || gender.dirty)" class="text-warning">
-                            <p>Enter a valid gender</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm input-group mt-3">
-                            <span class="input-group-text bi bi-key"></span>
-                            <input type="password" name="password" #password="ngModel" ngModel class="form-control" placeholder="password" required />
-                        </div>
-                        <div *ngIf="password.invalid && (password.touched || password.dirty)" class="text-warning">
-                            <p>Enter a valid password</p>
-                        </div>
-                        <div class="col-sm input-group mt-3">
-                            <span class="input-group-text bi bi-key-fill"></span>
-                            <input type="password" name="confirmPassword" #confirmPassword="ngModel" ngModel class="form-control"
-                                placeholder="confirm password" required />
-                        </div>
-                        <div *ngIf="(password==confirmPassword || !confirmPassword.dirty)" class="text-warning">
-                            <p>password does not match</p>
-                        </div>
-                    </div>
-                    <div class="d-grid input-group mt-3">
-                        <button class="btn btn-primary" type="submit" name="signup">Sign Up<span class="bi bi-door-open"></span></button>
-                    </div>
-                </form>
+                <legend>
+                    <div class="display-6 mt-3 text-primary1">Signup<span class="bi bi-door-closed"></span></div>
+                </legend>
             </div>
-            <div class="d-grid justify-content-center mt-2">
-                <a class="link-primary" routerLink="/login">registered?</a>
-            </div>
-            <div class="d-inline-block justify-content-center mb-3 mt-3">
-                <a class="link-primary m-3" href="#" target="_blank"><span class="bi bi-facebook"></span></a>
-                <a class="link-primary m-3" href="#" target="_blank"><span class="bi bi-twitter"></span></a>
-                <a class="link-primary m-3" href="#" target="_blank"><span class="bi bi-linkedin"></span></a>
-                <a class="link-primary m-3" href="#" target="_blank"><span class="bi bi-youtube"></span></a>
+            <div>
+                <div class="d-flex justify-content-center">
+                    <form class="ps-3 pe-3" #signupForm="ngForm" ngForm (submit)="signup(signupForm.value)"
+                        enctype="text/plain">
+                        <div class="row">
+                            <div class="col-sm input-group mt-3">
+                                <input type="text" name="firstName" #firstName="ngModel" ngModel class="form-control"
+                                    placeholder="First Name" minlength="2" required />
+                            </div>
+
+                            <div class="col-sm input-group mt-3">
+                                <input type="text" name="lastName" #lastName="ngModel" ngModel class="form-control"
+                                    placeholder="Last Name" minlength="3" required />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div *ngIf="firstName.invalid && firstName.touched" class="col-sm text-warning">
+                                <p>Enter a valid first name</p>
+                            </div>
+                            <div *ngIf="lastName.invalid && lastName.touched" class="col-sm text-warning">
+                                <p>Enter a valid last name</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm input-group mt-3">
+                                <span class="input-group-text text-dark bi bi-envelope"></span>
+                                <input type="email" name="email" #email="ngModel" ngModel class="form-control"
+                                    placeholder="example@email.com" email required />
+                            </div>
+                            <div class="col-sm input-group mt-3">
+                                <select class="form-select" name="gender" #gender="ngModel" ngModel required>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div *ngIf="email.invalid && email.touched" class="col-sm text-warning">
+                                <p>Enter a valid email</p>
+                            </div>
+                            <div *ngIf="gender.invalid && gender.touched" class="col-sm text-warning">
+                                <p>Enter a valid gender</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm input-group mt-3">
+                                <span class="input-group-text bi bi-key"></span>
+                                <input type="password" name="password" #password="ngModel" ngModel class="form-control"
+                                    placeholder="password" minlength="4" required />
+                            </div>
+                            <div class="col-sm input-group mt-3">
+                                <span class="input-group-text bi bi-key-fill"></span>
+                                <input type="password" name="confirmPassword" #confirmPassword="ngModel" ngModel
+                                    class="form-control" placeholder="confirm password" minlength="4" required />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div *ngIf="password.invalid && password.touched" class="col-sm text-warning">
+                                <p>Enter a valid password</p>
+                            </div>
+                            <div *ngIf="(confirmPassword.touched && (!isMatch(signupForm.value) || confirmPassword.invalid))"
+                                class="col-sm text-warning">
+                                <p>password does not match</p>
+                            </div>
+                        </div>
+                        <div class="d-grid input-group mt-3">
+                            <button class="btn btn-primary" type="submit" name="signup"
+                                [disabled]="signupForm.invalid">Sign Up<span class="bi bi-door-open"></span></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="d-grid justify-content-center mt-2">
+                    <a class="link-primary" routerLink="/login">registered?</a>
+                </div>
+                <div class="d-inline-block justify-content-center mb-3 mt-3">
+                    <a class="link-primary m-3" href="#" target="_blank"><span class="bi bi-facebook"></span></a>
+                    <a class="link-primary m-3" href="#" target="_blank"><span class="bi bi-twitter"></span></a>
+                    <a class="link-primary m-3" href="#" target="_blank"><span class="bi bi-linkedin"></span></a>
+                    <a class="link-primary m-3" href="#" target="_blank"><span class="bi bi-youtube"></span></a>
+                </div>
             </div>
         </div>
     </div>
