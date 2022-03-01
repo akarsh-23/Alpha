@@ -3,7 +3,8 @@
 @import '../../../node_modules/bootstrap-icons/font/bootstrap-icons.css'; 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
-body { 
+body {
+    background-color: white;
     margin: 0;
     font-family: 'Quicksand', sans-serif;
     text-align: center;
@@ -13,29 +14,30 @@ body {
 p{
     font-family: 'Quicksand', sans-serif;
 }
-.btn-primary{
-    background-color: indigo;
+.btn-outline-primary{
+    border-color: #9700efb4;
+    color: #9700efb4;
 }
-.btn-primary:hover{
-    background-color: indigo;
+.btn-outline-primary:hover{
+    background-color: #9700efb4;
 }
-.btn-primary:disabled{
-    background-color: rgba(76, 0, 130, 0.616);
+.btn-outline-primary:disabled{
+    background-color: #9700efb4;
 }
 .link-primary{
     text-decoration: none;
-    color: indigo;
+    color: #9700efb4;
 }
 .link-primary:hover{
     text-decoration: none;
-    color: indigo;
+    color: #9700efb4;
     cursor: pointer;
 }
 .text-primary1{
-    color: indigo;
+    color: #9700efb4;
 }
 .nav-tabs:hover{
-    background-color: indigo;
+    background-color: #9700efb4;
 }
 .nav-tabs:hover .link-primary{
     color:whitesmoke;

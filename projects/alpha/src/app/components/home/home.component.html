@@ -1,15 +1,28 @@
-<div class="m-0 p-0 bg-white">
-    <div class="row align-items-center p-0 m-0">
+<div class="m-0 p-0">
+    <div class="row align-items-center p-3 m-0">
         <div class="col-sm">
-            <div class="display-6 text-primary1">Hello, I'm</div>
-            <div class="display-6 text-primary1">Akarsh Shrivastava</div>
-            <div class="d-flex justify-content-center p-3">
-                <a href="mailto:akarsh_shrivastava@yahoo.com" target="_blank" class="btn btn-primary ms-2 me-2"><span class="bi bi-envelope-fill"> Email</span></a>
-                <a href="https://linkedin.com/in/akarsh-shri" target="_blank" class="btn btn-secondary ms-2 me-2"><span class="bi bi-linkedin"> Linkedin</span></a>
+            <img class="w-50" [src]="image"/>
+        </div>
+        <div class="col-sm text-start">
+            <div class="p-0">
+                <div class="display-6 text-primary1  ms-2 me-2">Hello, I'm</div>
+                <div class="display-6 text-primary1  ms-2 me-2">Akarsh Shrivastava</div>
+                <p class="ms-2 me-2" style="text-align: justify;">
+                    To work for a renowned company and build my career that would help me in achieving greater practical excellence in technical domain. As a Fresher want to be an active member in a renowned organization where I can utilize my skills towards the growth of the organization which will provide excellent opportunities for career advancement & personal development.
+                </p>
+            </div>
+            <div class="d-flex justify-content-start">
+                <a href="mailto:akarsh_shrivastava@yahoo.com" target="_blank" class="btn btn-outline-primary ms-2 me-2"><span class="bi bi-google"> Email</span></a>
+                <a href="https://linkedin.com/in/akarsh-shri" target="_blank" class="btn btn-outline-secondary ms-2 me-2"><span class="bi bi-linkedin"> Linkedin</span></a>
             </div>
         </div>
-        <div class="col-sm">
-            <img class="w-75" [src]="image"/>
-        </div>
     </div>
+</div>
+
+<div class="m-3">
+    <app-projects></app-projects>
+</div>
+
+<div class="m-3">
+    <app-about></app-about>
 </div>

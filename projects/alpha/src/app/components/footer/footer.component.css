@@ -1,3 +1,13 @@
 .bg-primary1{
     background-color: #9700efb4;
+    color: whitesmoke;
+}
+.link-primary{
+    text-decoration: none;
+    color: whitesmoke;
+}
+.link-primary:hover{
+    text-decoration: none;
+    color: whitesmoke;
+    cursor: pointer;
 }
