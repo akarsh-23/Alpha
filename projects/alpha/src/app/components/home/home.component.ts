@@ -7,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   image!:string;
+  resume!:string;
   constructor() {
    }
 
   ngOnInit(): void {
     this.image = '/assets/img/Profile.png';
+    this.resume = '/assets/resume/resume.pdf';
   }
 
 }

@@ -14,6 +14,14 @@ body {
 p{
     font-family: 'Quicksand', sans-serif;
 }
+.btn-primary{
+    background-color: #9700efb4;
+    border-color: #9700efb4;
+}
+.btn-primary:hover{
+    background-color: #9700efb4;
+    border-color: #9700efb4;
+}
 .btn-outline-primary{
     border-color: #9700efb4;
     color: #9700efb4;
